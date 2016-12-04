@@ -1,0 +1,22 @@
+server:
+  port: 9411
+
+spring:
+  application:
+    name: zipkin-server
+  datasource:
+    schema: classpath:/cassandra3-schema.cql
+    url: jdbc:cassandra://127.0.0.1:9042
+    keyspace: zipkin3
+    contactPoints: localhost
+    initialize: true
+    continue-on-error: true
+  sleuth:
+    enabled: false
+
+zipkin:
+  storage:
+      type: cassandra3
+
+
+
